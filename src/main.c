@@ -21,7 +21,9 @@ How does the emulator work?
 #include <signal.h>
 #include <unistd.h>
 
-static char rom[1048576];
+
+/* 1kb 空间存放rom */
+static char rom[1024*1024];
 
 void do_exit() // normal exit at SIGINT
 {
@@ -30,11 +32,14 @@ void do_exit() // normal exit at SIGINT
 
 int main(int argc, char *argv[])
 {
+    /* 参数错误 */
     if (argc != 2)
     {
         fprintf(stderr, "Usage: mynes romfile.nes\n");
         exit(1);
     }
+
+    /* 以只读方式打开给定的 rom */
     FILE *fp = fopen(argv[1], "r");
     if (fp == NULL)
     {

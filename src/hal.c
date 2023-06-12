@@ -1,10 +1,8 @@
 /*
-This file presents all abstractions needed to port LiteNES.
-  (The current working implementation uses allegro library.)
+    移植此项目所有需要实现的东西，原项目在 linux 中使用了 allegro 库
 
-To port this project, replace the following functions by your own:
 1) nes_hal_init()
-    Do essential initialization work, including starting a FPS HZ timer.
+    必要的初始化工作，包括以指定 fps 刷新的定时器。‘
 
 2) nes_set_bg_color(c)
     Set the back ground color to be the NES internal color code c.
@@ -51,6 +49,7 @@ static ALLEGRO_VERTEX vtx[1000000];
 int vtx_sz = 0;
   
 /* Wait until next allegro timer event is fired. */
+/* 定时 */
 void wait_for_frame()
 {
     while (1)
