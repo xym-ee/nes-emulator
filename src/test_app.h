@@ -27,4 +27,6 @@ int oled_show_F16X16_letter(int fd, u8 x, u8 y, u8 *data, u32 length);
 int oled_show_F6X8_string(int fd, u8 x, u8 y, u8 *string);
 int oled_show_F8X16_string(int fd, u8 x, u8 y, u8 *string);
 
+int fb_refresh(int xx, int yy, int *buf);
+int fb_clear(int xx, int yy, int color);
 #endif

@@ -1,4 +1,5 @@
 CC      := gcc
+#CC      := arm-linux-gnueabihf-gcc
 CFLAGS  := -MMD -O2 -I./include -Wall -Werror
 LDFLAGS := 
 
